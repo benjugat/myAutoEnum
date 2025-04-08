@@ -1,4 +1,6 @@
 config
+mongoengine
+requests
 ipwhois
 pyopenssl
 shodan
