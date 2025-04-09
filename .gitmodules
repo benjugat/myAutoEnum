@@ -1,0 +1,3 @@
+[submodule "src/DNSLookuper"]
+	path = src/DNSLookuper
+	url = https://github.com/benjugat/DNSLookuper

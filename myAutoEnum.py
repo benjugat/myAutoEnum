@@ -204,13 +204,13 @@ def main():
 	print("")
 	print_status("Defining the Scope")
 	print("----------------------")
-	#read_scope()
+	read_scope()
 		
 	# Discovery
 	print("")
 	print_status("Starting Discovery")
 	print("----------------------")
-	#discover(discovery_modules)
+	discover(discovery_modules)
 
 	# Compare
 	print("")
