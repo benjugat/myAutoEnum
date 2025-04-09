@@ -1,5 +1,5 @@
 
-from src.dnslookuper import DNSLookuper
+from src.DNSLookuper.dnslookuper import DNSLookuper
 from controller.db import *
 
 def compare_scope(ips, subdomain_names):

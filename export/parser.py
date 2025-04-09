@@ -1,5 +1,5 @@
 import json
-from src.myCherryParser import myCherryParser
+from src.myCherryParser.myCherryParser import myCherryParser
 from controller.db import *
 
 '''
