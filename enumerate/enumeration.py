@@ -1,4 +1,4 @@
-from src.dnslookuper import DNSLookuper
+from src.DNSLookuper.dnslookuper import DNSLookuper
 from controller.db import *
 from enumerate.modules import *
 

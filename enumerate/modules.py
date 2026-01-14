@@ -1,5 +1,5 @@
 import os
-from src.dnslookuper import DNSLookuper
+from src.DNSLookuper.dnslookuper import DNSLookuper
 from controller.util import *
 import requests
 import shodan
@@ -46,7 +46,7 @@ def shodan_host(ip):
 def whois_ip(ip):
 	# Return a the whois_result dict
 	ipwh = ipwhois.IPWhois(ip)
-	out = ipwh.lookup()
+	out = ipwh.lookup_whois()
 	print(out)
 	whois_result = {
 		"asn_registry" : out["asn_registry"],

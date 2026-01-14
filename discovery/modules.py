@@ -6,7 +6,7 @@ import socket
 import sys
 import shodan
 from concurrent import futures
-from src.dnslookuper import DNSLookuper
+from src.DNSLookuper.dnslookuper import DNSLookuper
 from controller.util import *
 
 #
