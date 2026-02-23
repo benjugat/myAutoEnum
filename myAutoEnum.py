@@ -82,9 +82,11 @@ def discover(discovery_modules):
 
 	# Getting SubDomains from Domains
 	domain_names = get_all_domain_names()
+	print(domain_names)
 	if domain_names:
 		for domain_name in domain_names:
-			find_subdomains(discovery_modules, args.name, domain_name)
+			if str_is_domain(domain_name):
+				find_subdomains(discovery_modules, args.name, domain_name)
 
 def discover_websites():
 	subdomain_names = get_scope_subdomain_names()
