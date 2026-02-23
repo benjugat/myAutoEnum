@@ -28,13 +28,15 @@ def str_is_domain(entry):
 	entry = entry.lower()
 	le = entry.split('.')
 	if len(le) == 2 and len(entry) > 3 and re.match('\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}', entry) == None and le[-2] not in tld_list:
-			print("IS DOMAIN %s" % entry)
+			return True
+	elif (len(le) == 3) and (len(entry) > 5) and ('*' not in entry) and (le[-2] in tld_list) and (le[-1] in tld_list):
 			return True
 	return False
 
 def str_is_subdomain(entry):
+	entry = entry.lower()
 	le = entry.split('.')
-	if len(le) > 2 and len(entry) > 5 and entry[-1] != '*' and re.match('\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}', entry) == None and le[-2].upper() not in tld_list:
+	if (len(le) > 2) and (len(entry) > 5) and ('*' not in entry) and (re.match('\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}', entry) == None) and (le[-2] not in tld_list):
 		return True
 	return False
 
