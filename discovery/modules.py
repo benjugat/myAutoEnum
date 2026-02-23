@@ -110,7 +110,7 @@ def wayback_domains(domain_name):
 	# Get a list of domain names from wayback machine.
 	# Based on https://gist.github.com/mhmdiaa/adf6bff70142e5091792841d4b372050
 	# No API KEY needed
-	r = requests.get('http://web.archive.org/cdx/search/cdx?url=*.%s/*&output=json&fl=original&collapse=urlkey' % domain_name, proxies=get_proxy())
+	r = requests.get('http://web.archive.org/cdx/search/cdx?url=*.%s/*&output=json&fl=original&collapse=urlkey&limit=1000' % domain_name, proxies=get_proxy())
 	dns_names = set()
 
 	if r.status_code == 200:
@@ -124,6 +124,7 @@ def wayback_domains(domain_name):
 					domain = str_get_domain_from_url(url)
 					if domain and domain_name in domain:
 						dns_names.add(domain)
+	
 	return dns_names
 
 def fuzz_dns(domain_name, dictfile='./src/subdomains-top1mil-5000.txt'):

@@ -126,17 +126,17 @@ def gowitness(url):
 	# Need to set a env variable in the .env file:
 	# GOWITNESS_BIN = "./src/gowitness-2.4.2-linux-amd64"
 	if os.environ.get('GOWITNESS_BIN'):
-		os.system("echo '%s' | %s file -f -" % (url, os.environ.get('GOWITNESS_BIN')))
+		os.system("%s scan single --url '%s' --write-db" % (os.environ.get('GOWITNESS_BIN'), url))
 		# Get gowtiness results from gowitness.sqlite3 database
 		try:
-			conn = sqlite3.connect("gowitness.sqlite3")
+			conn = sqlite3.connect("./gowitness.sqlite3")
 			sql = conn.cursor()
 		except:
 			print_error("Problems with gowitness database")
 
 		# Getting: url_id, title,filename, response_reason
 		# URLS table
-		res = sql.execute("SELECT id,filename,title,response_reason from urls WHERE url='%s'" % url)
+		res = sql.execute("SELECT id,filename,title,response_reason from results WHERE url='%s'" % url)
 		try:
 			a = res.fetchone()
 
