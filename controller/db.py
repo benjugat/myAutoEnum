@@ -139,7 +139,7 @@ def get_domain(domain_name):
 def get_all_domain_names():
 	# Get a list of domain names (str)
 	domains = Domain.objects()
-	return [o.name for o in domains]
+	return [o.name for o in domains if str_is_domain(o.name)]
 
 def new_domain(scope_name, domain_name):
 	if not check_domain(domain_name):

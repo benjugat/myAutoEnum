@@ -197,7 +197,7 @@ def main():
 		'wayback_urls',
 		'shodan_host',
 		'whois_ip',
-		#'gowitness'
+		'gowitness'
 	]
 	
 	# Defining the scope
@@ -210,7 +210,7 @@ def main():
 	print("")
 	print_status("Starting Discovery")
 	print("----------------------")
-	#discover(discovery_modules)
+	discover(discovery_modules)
 
 	# Compare
 	print("")
@@ -228,13 +228,13 @@ def main():
 	print("")
 	print_status("Starting Enumeration")
 	print("----------------------")
-	enum(enum_modules)
+	#enum(enum_modules)
 	
 	# Export
 	print("")
 	print_status("Starting Exports")
 	print("----------------------")
-	export()
+	#export()
 
 	# Exit
 	print("")
