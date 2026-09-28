@@ -321,6 +321,7 @@ def parse_webpage(url):
 		],
 		"sub_node" : []
 	}
+	print(web.title)
 	if web.title and web.title != '' and web.title != 'null':
 		content = [
 			{

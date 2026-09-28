@@ -212,19 +212,19 @@ def main():
 	print("")
 	print_status("Starting Discovery")
 	print("----------------------")
-	#discover(discovery_modules)
+	discover(discovery_modules)
 
 	# Compare
 	print("")
 	print_status("Comparing")
 	print("----------------------")
-	#compare()
+	compare()
 
 	# Websites Discovery
 	print("")
 	print_status("WebSite Discovery")
 	print("----------------------")
-	#discover_websites()
+	discover_websites()
 
 	# Enum
 	print("")

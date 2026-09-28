@@ -139,24 +139,26 @@ def gowitness(url):
 		res = sql.execute("SELECT id,filename,title,response_reason from results WHERE url='%s'" % url)
 		try:
 			a = res.fetchone()
+			print(a)
 
 			if a:
+				print("test")
 				url_id, filename, title, response_reason = a
 				# Getting: technologies
 				# TECHNOLOGIES table
-				res = sql.execute("SELECT value from technologies where url_id=%d" % int(url_id))
+				res = sql.execute("SELECT value from technologies where result_id=%d" % int(url_id))
 				a = res.fetchall()	
 				technologies = [o[0] for o in a if o[0]]
 
 				# Getting: headers
 				# HEADERS table
-				res = sql.execute("SELECT key,value from headers where url_id=%d" % int(url_id))
+				res = sql.execute("SELECT key,value from headers where result_id=%d" % int(url_id))
 				a = res.fetchall()
 				headers = list()
 				for i in a:
 					if i:
 						headers.append({"header" : i[0], "value" : i[1]})
-
+				
 				return {
 						"title" : title,
 						"status_code" : response_reason,
